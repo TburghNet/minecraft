@@ -1,0 +1,23 @@
+version: "3.4"
+services:
+  app:
+    image: minecraft_app
+    build: .
+    stdin_open: true
+    tty: true
+    ports:
+      - 25565:25565
+    volumes:
+      - world:/minecraft/world
+      - config:/minecraft/config
+    deploy:
+      mode: global
+      resources:
+        limits:
+          cpus: "2"
+          memory: 4096M
+volumes:
+  world:
+    name: minecraft_world
+  config:
+    name: minecraft_config

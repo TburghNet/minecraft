@@ -1,0 +1,14 @@
+[
+  {
+    "uuid": "e38a9525-2863-429d-8e1e-3137636dc6ac",
+    "name": "Voxotron",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  },
+  {
+    "uuid": "895bc1ee-ac24-4043-bf95-2e18747a9764",
+    "name": "Voxotron2",
+    "level": 4,
+    "bypassesPlayerLimit": false
+  }
+]
