@@ -1,23 +1,23 @@
-version: "3.4"
+version: "2.4"
 services:
   app:
-    image: tburghnet/minecraft:${TAG:-latest}
-    build: .
+    container_name: minecraft
+    image: "tburghnet/minecraft:${TAG:-latest}"
     stdin_open: true
     tty: true
+    restart: unless-stopped
+    cpus: 2
+    mem_limit: 4G
     ports:
       - 25565:25565
     volumes:
       - world:/minecraft/world
       - config:/minecraft/config
-    deploy:
-      mode: global
-      resources:
-        limits:
-          cpus: "2"
-          memory: 4096M
+      - logs:/minecraft/logs
 volumes:
   world:
     name: minecraft_world
   config:
     name: minecraft_config
+  logs:
+    name: minecraft_logs
